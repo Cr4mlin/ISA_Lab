@@ -48,6 +48,14 @@ namespace Logic
                 // Регистрация EntityRepository как Singleton
                 Bind<IRepository<Course>>().To<EntityRepository<Course>>()
                     .InSingletonScope();
+
+                // Регистрация EntityUserRepository
+                Bind<IUserRepository>().To<EntityUserRepository>()
+                    .InSingletonScope();
+
+                // Регистрация EntityUserCourseRepository
+                Bind<IUserCourseRepository>().To<EntityUserCourseRepository>()
+                    .InSingletonScope();
             }
             else
             {
@@ -58,6 +66,14 @@ namespace Logic
 
                 // Регистрация DapperRepository как Singleton
                 Bind<IRepository<Course>>().To<DapperRepository<Course>>()
+                    .InSingletonScope();
+
+                // Регистрация DapperUserRepository
+                Bind<IUserRepository>().To<DapperUserRepository>()
+                    .InSingletonScope();
+
+                // Регистрация DapperUserCourseRepository
+                Bind<IUserCourseRepository>().To<DapperUserCourseRepository>()
                     .InSingletonScope();
             }
 
@@ -93,6 +109,12 @@ namespace Logic
             // Регистрация SchoolService (фасад)
             Bind<ISchoolService>().To<SchoolService>().InTransientScope();
             Bind<SchoolService>().To<SchoolService>().InTransientScope();
+
+            // Регистрация новых сервисов для аутентификации и управления пользователями
+            Bind<IPasswordHasher>().To<Md5PasswordHasher>().InSingletonScope();
+            Bind<IAuthenticationService>().To<AuthenticationService>().InTransientScope();
+            Bind<IUserManagementService>().To<UserManagementService>().InTransientScope();
+            Bind<IUserCourseService>().To<UserCourseService>().InTransientScope();
         }
     }
 }

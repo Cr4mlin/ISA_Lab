@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System;
 using Logic;
+using Logic.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal;

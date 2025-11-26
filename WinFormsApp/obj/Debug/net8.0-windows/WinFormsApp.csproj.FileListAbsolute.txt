@@ -1,7 +1,6 @@
 C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.csproj.AssemblyReference.cache
 C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.AddEditCourseForm.resources
 C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.DbConnectionForm.resources
-C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.MainForm.resources
 C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.PriceRangeForm.resources
 C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.SearchForm.resources
 C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.csproj.GenerateResource.cache
@@ -165,3 +164,5 @@ C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\obj\Debug\net8.0-windows\refint\
 C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.pdb
 C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.genruntimeconfig.cache
 C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\obj\Debug\net8.0-windows\ref\WinFormsApp.dll
+C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.AdminForm.resources
+C:\Users\Maxim\source\repos\Lab1_S3\WinFormsApp\obj\Debug\net8.0-windows\WinFormsApp.UserManagementForm.resources
