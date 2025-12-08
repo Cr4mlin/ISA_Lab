@@ -11,11 +11,6 @@ namespace Shared
     public interface IUserView : IView
     {
         /// <summary>
-        /// Событие загрузки формы
-        /// </summary>
-        event EventHandler FormLoaded;
-
-        /// <summary>
         /// Событие запроса на покупку курса
         /// </summary>
         event EventHandler<int> PurchaseCourseRequested;
@@ -46,6 +41,11 @@ namespace Shared
         event EventHandler DeleteAvatarRequested;
 
         /// <summary>
+        /// Событие запроса на загрузку аватара
+        /// </summary>
+        event EventHandler LoadAvatarRequested;
+
+        /// <summary>
         /// Событие предоставления изображения аватара
         /// </summary>
         event EventHandler<Image> AvatarImageProvided;
@@ -63,7 +63,7 @@ namespace Shared
         /// <summary>
         /// Устанавливает аватар пользователя
         /// </summary>
-        void SetUserAvatar(Image avatar);
+        void SetUserAvatar(Image? avatar);
 
         /// <summary>
         /// Отображает сообщение об ошибке

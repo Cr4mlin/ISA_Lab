@@ -40,6 +40,23 @@ namespace Logic.Services
             _userRepository.Update(user);
         }
 
+        public bool DeleteUser(int userId, int currentUserId)
+        {
+            if (userId == currentUserId)
+            {
+                throw new UnauthorizedRoleChangeException("Нельзя удалить самого себя");
+            }
+
+            var user = _userRepository.ReadById(userId);
+            if (user == null)
+            {
+                throw new CourseNotFoundException($"Пользователь с ID {userId} не найден");
+            }
+
+            _userRepository.Delete(userId);
+            return true;
+        }
+
         public User? GetUserById(int id)
         {
             return _userRepository.ReadById(id);

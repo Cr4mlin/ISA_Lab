@@ -95,6 +95,7 @@ namespace Logic
 
             // Регистрация сервисов поиска
             Bind<ICourseSearchService>().To<CourseSearchService>().InSingletonScope();
+            Bind<IUserSearchService>().To<UserSearchService>().InSingletonScope();
 
             // Регистрация стратегий экспорта
             Bind<PdfExportStrategy>().ToSelf().InSingletonScope();
@@ -115,6 +116,7 @@ namespace Logic
             Bind<IAuthenticationService>().To<AuthenticationService>().InTransientScope();
             Bind<IUserManagementService>().To<UserManagementService>().InTransientScope();
             Bind<IUserCourseService>().To<UserCourseService>().InTransientScope();
+            Bind<IAvatarService>().To<AvatarSevice>().InSingletonScope();
         }
     }
 }

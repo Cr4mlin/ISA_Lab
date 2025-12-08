@@ -65,6 +65,21 @@ namespace Shared
         event EventHandler ExportRequested;
 
         /// <summary>
+        /// Событие запроса на загрузку аватара
+        /// </summary>
+        event EventHandler LoadAvatarRequested;
+
+        /// <summary>
+        /// Событие запроса на изменение аватара
+        /// </summary>
+        event EventHandler<string> ChangeAvatarRequested;
+
+        /// <summary>
+        /// Событие запроса на удаление аватара
+        /// </summary>
+        event EventHandler DeleteAvatarRequested;
+
+        /// <summary>
         /// Отображает список курсов
         /// </summary>
         void DisplayCourses(IEnumerable<CourseDto> courses);
@@ -141,5 +156,21 @@ namespace Shared
         /// Запрашивает новую роль для пользователя
         /// </summary>
         int? RequestNewRole(string userName, int currentRole);
+
+        /// <summary>
+        /// Устанавливает аватар пользователя в главной форме
+        /// </summary>
+        void SetUserAvatar(System.Drawing.Image? avatar);
+
+        /// <summary>
+        /// Запрашивает выбор файла изображения у пользователя
+        /// </summary>
+        /// <returns>Путь к выбранному файлу или null если отменено</returns>
+        string? RequestImageFile();
+
+        /// <summary>
+        /// Запрашивает подтверждение удаления аватара
+        /// </summary>
+        bool ConfirmDeleteAvatar();
     }
 }

@@ -31,7 +31,7 @@ namespace Logic.Services
             return user;
         }
 
-        public User Register(string login, string password)
+        public User Register(string login, string password, string nickName)
         {
             if (string.IsNullOrWhiteSpace(login))
             {
@@ -41,6 +41,11 @@ namespace Logic.Services
             if (string.IsNullOrWhiteSpace(password))
             {
                 throw new ArgumentException("Пароль не может быть пустым");
+            }
+
+            if (string.IsNullOrWhiteSpace(nickName))
+            {
+                throw new ArgumentException("Имя пользователя не может быть пустым");
             }
 
             var existingUser = _userRepository.FindByLogin(login);
@@ -54,6 +59,7 @@ namespace Logic.Services
             {
                 Login = login,
                 Password = hashedPassword,
+                NickName = nickName,
                 Role = 2 // По умолчанию роль User
             };
 

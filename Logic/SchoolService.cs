@@ -4,10 +4,6 @@ using Model;
 
 namespace Logic
 {
-    /// <summary>
-    /// Фасад для управления курсами
-    /// Делегирует вызовы специализированным сервисам
-    /// </summary>
     public class SchoolService : ISchoolService
     {
         private readonly ICourseManagementService _managementService;
@@ -15,26 +11,34 @@ namespace Logic
         private readonly ICourseFilterService _filterService;
         private readonly ICourseSearchService _searchService;
         private readonly ICourseExportService _exportService;
+        private readonly IAuthenticationService _authService;
+        private readonly IUserManagementService _userManagementService;
+        private readonly IUserCourseService _userCourseService;
+        private readonly IAvatarService _avatarService;
+        private readonly IUserSearchService _userSearchService;
 
-        /// <summary>
-        /// Инициализирует новый экземпляр сервиса управления курсами
-        /// </summary>
-        /// <param name="managementService">Сервис управления курсами</param>
-        /// <param name="queryService">Сервис запросов курсов</param>
-        /// <param name="filterService">Сервис фильтрации курсов</param>
-        /// <param name="searchService">Сервис поиска курсов</param>
         public SchoolService(
             ICourseManagementService managementService,
             ICourseQueryService queryService,
             ICourseFilterService filterService,
             ICourseSearchService searchService,
-            ICourseExportService exportService)
+            ICourseExportService exportService,
+            IAuthenticationService authService,
+            IUserManagementService userManagementService,
+            IUserCourseService userCourseService,
+            IAvatarService avatarService,
+            IUserSearchService userSearchService)
         {
             _managementService = managementService ?? throw new ArgumentNullException(nameof(managementService));
             _queryService = queryService ?? throw new ArgumentNullException(nameof(queryService));
             _filterService = filterService ?? throw new ArgumentNullException(nameof(filterService));
             _searchService = searchService ?? throw new ArgumentNullException(nameof(searchService));
             _exportService = exportService ?? throw new ArgumentNullException(nameof(exportService));
+            _authService = authService ?? throw new ArgumentNullException(nameof(authService));
+            _userManagementService = userManagementService ?? throw new ArgumentNullException(nameof(userManagementService));
+            _userCourseService = userCourseService ?? throw new ArgumentNullException(nameof(userCourseService));
+            _avatarService = avatarService ?? throw new ArgumentNullException(nameof(avatarService));
+            _userSearchService = userSearchService ?? throw new ArgumentNullException(nameof(userSearchService));
         }
 
         /// <summary>
@@ -148,5 +152,43 @@ namespace Logic
         {
             _exportService.ExportCourses(courses, filePath, format);
         }
+
+        // Authentication methods
+        public User? Login(string login, string password) => _authService.Login(login, password);
+
+        public User Register(string login, string password, string nickName) => _authService.Register(login, password, nickName);
+
+        // User management methods
+        public List<User> GetAllUsers() => _userManagementService.GetAllUsers();
+
+        public void ChangeUserRole(int userId, int newRoleId, int currentUserId) =>
+            _userManagementService.ChangeUserRole(userId, newRoleId, currentUserId);
+
+        public bool DeleteUser(int userId, int currentUserId) =>
+            _userManagementService.DeleteUser(userId, currentUserId);
+
+        public User? GetUserById(int id) => _userManagementService.GetUserById(id);
+
+        public List<User> SearchUsers(string searchText, List<string> searchProperties)
+        {
+            var allUsers = _userManagementService.GetAllUsers();
+            return _userSearchService.Search(allUsers, searchText, searchProperties);
+        }
+
+        // User course methods
+        public void PurchaseCourse(int userId, int courseId) => _userCourseService.PurchaseCourse(userId, courseId);
+
+        public List<Course> GetPurchasedCourses(int userId) => _userCourseService.GetPurchasedCourses(userId);
+
+        public bool HasPurchasedCourse(int userId, int courseId) => _userCourseService.HasPurchasedCourse(userId, courseId);
+
+        // Avatar methods
+        public void SaveAvatar(int userid, System.Drawing.Image image) => _avatarService.SaveAvatar(userid, image);
+
+        public void DeleteAvatar(int userid) => _avatarService.DeleteAvatar(userid);
+
+        public System.Drawing.Image LoadAvatar(int userid) => _avatarService.LoadAvatar(userid);
+
+        public string GetAvatarPath(int userid) => _avatarService.GetAvatarPath(userid);
     }
 }
