@@ -181,12 +181,6 @@ namespace Logic
         void SaveAvatar(int userid, System.Drawing.Image image);
 
         /// <summary>
-        /// Удаляет аватар пользователя
-        /// </summary>
-        /// <param name="userid">ID пользователя</param>
-        void DeleteAvatar(int userid);
-
-        /// <summary>
         /// Загружает аватар пользователя
         /// </summary>
         /// <param name="userid">ID пользователя</param>

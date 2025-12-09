@@ -14,11 +14,6 @@ namespace Shared
         event EventHandler ChangeAvatarRequested;
 
         /// <summary>
-        /// Событие удаления аватара
-        /// </summary>
-        event EventHandler DeleteAvatarRequested;
-
-        /// <summary>
         /// Отображает аватар пользователя
         /// </summary>
         void DisplayAvatar(Image? avatar);
@@ -37,10 +32,5 @@ namespace Shared
         /// Запрашивает выбор файла изображения
         /// </summary>
         string? RequestImageFile();
-
-        /// <summary>
-        /// Запрашивает подтверждение удаления аватара
-        /// </summary>
-        bool ConfirmDeleteAvatar();
     }
 }

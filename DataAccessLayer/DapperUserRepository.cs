@@ -15,7 +15,7 @@ namespace DataAccessLayer
 
         public void Add(User entity)
         {
-            var sql = "INSERT INTO Users (login, password, role) VALUES (@Login, @Password, @Role)";
+            var sql = "INSERT INTO Users (login, password, role, nick) VALUES (@Login, @Password, @Role, @NickName)";
             _connection.Execute(sql, entity);
         }
 
@@ -26,25 +26,25 @@ namespace DataAccessLayer
 
         public List<User> ReadAll()
         {
-            return _connection.Query<User>("SELECT * FROM Users").ToList();
+            return _connection.Query<User>("SELECT id as Id, login as Login, password as Password, role as Role, nick as NickName FROM Users").ToList();
         }
 
         public User ReadById(int id)
         {
-            return _connection.QuerySingleOrDefault<User>("SELECT * FROM Users WHERE id = @id", new { id });
+            return _connection.QuerySingleOrDefault<User>("SELECT id as Id, login as Login, password as Password, role as Role, nick as NickName FROM Users WHERE id = @id", new { id });
         }
 
         public void Update(User entity)
         {
             var sql = @"UPDATE Users
-                       SET login=@Login, password=@Password, role=@Role
+                       SET login=@Login, password=@Password, role=@Role, nick=@NickName
                        WHERE id=@Id";
             _connection.Execute(sql, entity);
         }
 
         public User? FindByLogin(string login)
         {
-            return _connection.QuerySingleOrDefault<User>("SELECT * FROM Users WHERE login = @login", new { login });
+            return _connection.QuerySingleOrDefault<User>("SELECT id as Id, login as Login, password as Password, role as Role, nick as NickName FROM Users WHERE login = @login", new { login });
         }
 
         public string GetRoleName(int roleId)

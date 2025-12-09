@@ -28,35 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            searchBox = new Controls.CustomTextBox();
-            labelSearch = new Label();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             btnSearch = new Controls.Buttons();
             btnDelete = new Controls.Buttons();
             btnEdit = new Controls.Buttons();
             btnAdd = new Controls.Buttons();
-            OwnerCoursesGridView = new DataGridView();
             btnChangeStatus = new Controls.Buttons();
+            panel1 = new Panel();
+            labelSearch = new Label();
+            searchBox = new Controls.CustomTextBox();
+            OwnerCoursesGridView = new DataGridView();
+            panel2 = new Panel();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)OwnerCoursesGridView).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
-            // 
-            // searchBox
-            // 
-            searchBox.BackColor = Color.FromArgb(250, 0, 164);
-            searchBox.Location = new Point(113, 24);
-            searchBox.Name = "searchBox";
-            searchBox.Padding = new Padding(0, 0, 0, 1);
-            searchBox.Size = new Size(545, 25);
-            searchBox.TabIndex = 3;
-            // 
-            // labelSearch
-            // 
-            labelSearch.AutoSize = true;
-            labelSearch.Font = new Font("Verdana", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            labelSearch.Location = new Point(19, 21);
-            labelSearch.Name = "labelSearch";
-            labelSearch.Size = new Size(94, 28);
-            labelSearch.TabIndex = 2;
-            labelSearch.Text = "Поиск:";
             // 
             // btnSearch
             // 
@@ -69,7 +58,7 @@
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.Font = new Font("Verdana", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnSearch.ForeColor = Color.White;
-            btnSearch.Location = new Point(664, 16);
+            btnSearch.Location = new Point(0, 12);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(124, 37);
             btnSearch.TabIndex = 4;
@@ -88,7 +77,7 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Verdana", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(664, 158);
+            btnDelete.Location = new Point(0, 158);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(124, 37);
             btnDelete.TabIndex = 5;
@@ -107,7 +96,7 @@
             btnEdit.FlatStyle = FlatStyle.Flat;
             btnEdit.Font = new Font("Verdana", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnEdit.ForeColor = Color.White;
-            btnEdit.Location = new Point(664, 115);
+            btnEdit.Location = new Point(0, 115);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(124, 37);
             btnEdit.TabIndex = 6;
@@ -126,23 +115,13 @@
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Verdana", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(664, 72);
+            btnAdd.Location = new Point(0, 72);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(124, 37);
             btnAdd.TabIndex = 7;
             btnAdd.Text = "Добавить";
             btnAdd.TextColor = Color.White;
             btnAdd.UseVisualStyleBackColor = false;
-            // 
-            // OwnerCoursesGridView
-            // 
-            OwnerCoursesGridView.BackgroundColor = Color.White;
-            OwnerCoursesGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            OwnerCoursesGridView.Location = new Point(19, 72);
-            OwnerCoursesGridView.Name = "OwnerCoursesGridView";
-            OwnerCoursesGridView.RowHeadersWidth = 51;
-            OwnerCoursesGridView.Size = new Size(639, 366);
-            OwnerCoursesGridView.TabIndex = 8;
             // 
             // btnChangeStatus
             // 
@@ -155,7 +134,7 @@
             btnChangeStatus.FlatStyle = FlatStyle.Flat;
             btnChangeStatus.Font = new Font("Verdana", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnChangeStatus.ForeColor = Color.White;
-            btnChangeStatus.Location = new Point(664, 201);
+            btnChangeStatus.Location = new Point(0, 201);
             btnChangeStatus.Name = "btnChangeStatus";
             btnChangeStatus.Size = new Size(124, 37);
             btnChangeStatus.TabIndex = 9;
@@ -163,37 +142,124 @@
             btnChangeStatus.TextColor = Color.White;
             btnChangeStatus.UseVisualStyleBackColor = false;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(btnSearch);
+            panel1.Controls.Add(btnChangeStatus);
+            panel1.Controls.Add(btnAdd);
+            panel1.Controls.Add(btnEdit);
+            panel1.Controls.Add(btnDelete);
+            panel1.Dock = DockStyle.Right;
+            panel1.Location = new Point(664, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(136, 450);
+            panel1.TabIndex = 10;
+            // 
+            // labelSearch
+            // 
+            labelSearch.AutoSize = true;
+            labelSearch.Font = new Font("Verdana", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            labelSearch.ForeColor = Color.Black;
+            labelSearch.Location = new Point(19, 24);
+            labelSearch.Name = "labelSearch";
+            labelSearch.Size = new Size(94, 28);
+            labelSearch.TabIndex = 2;
+            labelSearch.Text = "Поиск:";
+            // 
+            // searchBox
+            // 
+            searchBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            searchBox.AutoSize = true;
+            searchBox.BackColor = Color.FromArgb(250, 0, 164);
+            searchBox.Location = new Point(119, 24);
+            searchBox.Name = "searchBox";
+            searchBox.Padding = new Padding(0, 0, 0, 1);
+            searchBox.Size = new Size(538, 25);
+            searchBox.TabIndex = 3;
+            // 
+            // OwnerCoursesGridView
+            // 
+            OwnerCoursesGridView.AllowUserToAddRows = false;
+            OwnerCoursesGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.DodgerBlue;
+            OwnerCoursesGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            OwnerCoursesGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            OwnerCoursesGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            OwnerCoursesGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            OwnerCoursesGridView.BackgroundColor = Color.White;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            OwnerCoursesGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            OwnerCoursesGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            OwnerCoursesGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            OwnerCoursesGridView.Location = new Point(16, 69);
+            OwnerCoursesGridView.MultiSelect = false;
+            OwnerCoursesGridView.Name = "OwnerCoursesGridView";
+            OwnerCoursesGridView.ReadOnly = true;
+            OwnerCoursesGridView.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            OwnerCoursesGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            OwnerCoursesGridView.RowTemplate.DefaultCellStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            OwnerCoursesGridView.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
+            OwnerCoursesGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            OwnerCoursesGridView.Size = new Size(639, 366);
+            OwnerCoursesGridView.TabIndex = 8;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(OwnerCoursesGridView);
+            panel2.Controls.Add(searchBox);
+            panel2.Controls.Add(labelSearch);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(664, 450);
+            panel2.TabIndex = 11;
+            // 
             // OwnerCoursesForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
-            Controls.Add(btnChangeStatus);
-            Controls.Add(OwnerCoursesGridView);
-            Controls.Add(btnAdd);
-            Controls.Add(btnEdit);
-            Controls.Add(btnDelete);
-            Controls.Add(btnSearch);
-            Controls.Add(searchBox);
-            Controls.Add(labelSearch);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "OwnerCoursesForm";
             Text = "OwnerCoursesView";
+            panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)OwnerCoursesGridView).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Controls.CustomTextBox searchBox;
-        private Label labelSearch;
         private Controls.Buttons btnSearch;
         private Controls.Buttons btnDelete;
         private Controls.Buttons btnEdit;
         private Controls.Buttons btnAdd;
-        private DataGridView OwnerCoursesGridView;
         private Controls.Buttons btnChangeStatus;
+        private Panel panel1;
+        private Label labelSearch;
+        private Controls.CustomTextBox searchBox;
+        private DataGridView OwnerCoursesGridView;
+        private Panel panel2;
     }
 }

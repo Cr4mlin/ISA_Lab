@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAcce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsApps", "WinFormsApps\WinFormsApps.csproj", "{6385CC9F-0608-4759-9D3F-C69639837AF0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{5B3D2CA2-2F87-43C0-AE8F-1D32FC8A7D14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presenter", "Presenter\Presenter.csproj", "{D4AE24F9-D6EA-4358-84F1-B096700DE625}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{6385CC9F-0608-4759-9D3F-C69639837AF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6385CC9F-0608-4759-9D3F-C69639837AF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6385CC9F-0608-4759-9D3F-C69639837AF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B3D2CA2-2F87-43C0-AE8F-1D32FC8A7D14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B3D2CA2-2F87-43C0-AE8F-1D32FC8A7D14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B3D2CA2-2F87-43C0-AE8F-1D32FC8A7D14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B3D2CA2-2F87-43C0-AE8F-1D32FC8A7D14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4AE24F9-D6EA-4358-84F1-B096700DE625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4AE24F9-D6EA-4358-84F1-B096700DE625}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4AE24F9-D6EA-4358-84F1-B096700DE625}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4AE24F9-D6EA-4358-84F1-B096700DE625}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

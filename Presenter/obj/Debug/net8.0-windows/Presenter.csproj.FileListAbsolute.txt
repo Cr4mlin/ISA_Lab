@@ -169,3 +169,5 @@ C:\Users\Maxim\source\repos\Lab1_S3\Presenter\bin\Debug\net8.0-windows\Presenter
 C:\Users\Maxim\source\repos\Lab1_S3\Presenter\obj\Debug\net8.0-windows\Presenter.csproj.Up2Date
 C:\Users\Maxim\source\repos\Lab1_S3\Presenter\obj\Debug\net8.0-windows\Presenter.genruntimeconfig.cache
 C:\Users\Maxim\source\repos\Lab1_S3\Presenter\obj\Debug\net8.0-windows\ref\Presenter.dll
+C:\Users\Maxim\source\repos\Lab1_S3\Presenter\obj\Debug\net8.0-windows\Presenter.csproj.GenerateResource.cache
+C:\Users\Maxim\source\repos\Lab1_S3\Presenter\obj\Debug\net8.0-windows\Presenter.Properties.Resources.resources

@@ -72,6 +72,10 @@ namespace DataAccessLayer
                 .Property(u => u.Role)
                 .HasColumnName("role");
 
+            modelBuilder.Entity<User>()
+                .Property(u => u.NickName)
+                .HasColumnName("nick");
+
             // Настройка таблицы Users_Courses
             modelBuilder.Entity<UserCourse>()
                 .HasKey(uc => new { uc.UserId, uc.CourseId });

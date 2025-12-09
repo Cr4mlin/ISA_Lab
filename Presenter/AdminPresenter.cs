@@ -38,7 +38,6 @@ namespace Presenter
             // События аватара
             _view.LoadAvatarRequested += OnLoadAvatarRequested;
             _view.ChangeAvatarRequested += OnChangeAvatarRequested;
-            _view.DeleteAvatarRequested += OnDeleteAvatarRequested;
         }
 
         public void SetUser(int userId)
@@ -310,6 +309,10 @@ namespace Presenter
                 {
                     _view.SetUserAvatar(avatar);
                 }
+                else
+                {
+                    _view.SetUserAvatar(Properties.Resources.DefaultAvatar);
+                }
             }
             catch (Exception ex)
             {
@@ -317,32 +320,28 @@ namespace Presenter
             }
         }
 
-        private void OnChangeAvatarRequested(object? sender, string imagePath)
+        private void OnChangeAvatarRequested(object? sender, EventArgs e)
         {
             try
             {
-                var image = Image.FromFile(imagePath);
-                _schoolService.SaveAvatar(_currentUserId, image);
-                _view.SetUserAvatar(image);
-                _view.ShowInfo("Аватар успешно изменен!");
+                var imagePath = _view.RequestImageFile();
+                if (!string.IsNullOrEmpty(imagePath))
+                {
+                    // Загружаем изображение и создаем копию, чтобы освободить файл
+                    Image image;
+                    using (var originalImage = Image.FromFile(imagePath))
+                    {
+                        image = new Bitmap(originalImage);
+                    }
+
+                    _schoolService.SaveAvatar(_currentUserId, image);
+                    _view.SetUserAvatar(image);
+                    _view.ShowInfo("Аватар успешно изменен!");
+                }
             }
             catch (Exception ex)
             {
                 _view.ShowError($"Ошибка при изменении аватара: {ex.Message}");
-            }
-        }
-
-        private void OnDeleteAvatarRequested(object? sender, EventArgs e)
-        {
-            try
-            {
-                _schoolService.DeleteAvatar(_currentUserId);
-                _view.SetUserAvatar(null);
-                _view.ShowInfo("Аватар успешно удален!");
-            }
-            catch (Exception ex)
-            {
-                _view.ShowError($"Ошибка при удалении аватара: {ex.Message}");
             }
         }
     }

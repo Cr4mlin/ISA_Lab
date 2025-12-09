@@ -70,7 +70,7 @@ namespace WinFormsApp
                     return;
                 }
 
-                var newUser = _authenticationService.Register(login, password);
+                var newUser = _authenticationService.Register(login, password, login);
 
                 MessageBox.Show($"Регистрация успешна! Вы зарегистрированы как пользователь (User).\nТеперь можете войти в систему.",
                     "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);

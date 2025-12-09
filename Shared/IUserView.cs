@@ -36,11 +36,6 @@ namespace Shared
         event EventHandler ChangeAvatarRequested;
 
         /// <summary>
-        /// Событие удаления аватара
-        /// </summary>
-        event EventHandler DeleteAvatarRequested;
-
-        /// <summary>
         /// Событие запроса на загрузку аватара
         /// </summary>
         event EventHandler LoadAvatarRequested;
@@ -94,10 +89,5 @@ namespace Shared
         /// Запрашивает подтверждение покупки курса
         /// </summary>
         bool ConfirmPurchase(string courseName);
-
-        /// <summary>
-        /// Запрашивает подтверждение удаления аватара
-        /// </summary>
-        bool ConfirmDeleteAvatar();
     }
 }

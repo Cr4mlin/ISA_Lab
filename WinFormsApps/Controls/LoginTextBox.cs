@@ -32,6 +32,13 @@ namespace WinFormsApps
             set { _isPassword = value; }
         }
 
+        // Свойство для доступа к тексту внутреннего TextBox
+        public override string Text
+        {
+            get { return textBox1.Text; }
+            set { textBox1.Text = value; }
+        }
+
         private void loginTextbox_Paint(object sender, PaintEventArgs e)
         {
             label1.Text = label;

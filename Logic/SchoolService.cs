@@ -185,8 +185,6 @@ namespace Logic
         // Avatar methods
         public void SaveAvatar(int userid, System.Drawing.Image image) => _avatarService.SaveAvatar(userid, image);
 
-        public void DeleteAvatar(int userid) => _avatarService.DeleteAvatar(userid);
-
         public System.Drawing.Image LoadAvatar(int userid) => _avatarService.LoadAvatar(userid);
 
         public string GetAvatarPath(int userid) => _avatarService.GetAvatarPath(userid);

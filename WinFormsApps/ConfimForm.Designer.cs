@@ -30,7 +30,7 @@
         {
             btnConfirm = new Controls.Buttons();
             btnCancel = new Controls.Buttons();
-            lblErrorMessage = new Label();
+            lblMessage = new Label();
             SuspendLayout();
             // 
             // btnConfirm
@@ -71,22 +71,22 @@
             btnCancel.TextColor = Color.White;
             btnCancel.UseVisualStyleBackColor = false;
             // 
-            // lblErrorMessage
+            // lblMessage
             // 
-            lblErrorMessage.AutoSize = true;
-            lblErrorMessage.Font = new Font("Verdana", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            lblErrorMessage.Location = new Point(12, 71);
-            lblErrorMessage.Name = "lblErrorMessage";
-            lblErrorMessage.Size = new Size(64, 22);
-            lblErrorMessage.TabIndex = 2;
-            lblErrorMessage.Text = "label1";
+            lblMessage.AutoSize = true;
+            lblMessage.Font = new Font("Verdana", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            lblMessage.Location = new Point(12, 71);
+            lblMessage.Name = "lblMessage";
+            lblMessage.Size = new Size(64, 22);
+            lblMessage.TabIndex = 2;
+            lblMessage.Text = "label1";
             // 
             // ConfimForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(366, 318);
-            Controls.Add(lblErrorMessage);
+            Controls.Add(lblMessage);
             Controls.Add(btnCancel);
             Controls.Add(btnConfirm);
             FormBorderStyle = FormBorderStyle.None;
@@ -100,6 +100,6 @@
 
         private Controls.Buttons btnConfirm;
         private Controls.Buttons btnCancel;
-        private Label lblErrorMessage;
+        private Label lblMessage;
     }
 }

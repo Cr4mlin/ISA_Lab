@@ -30,14 +30,19 @@
         {
             rbEntityFramework = new Controls.RadioButtons();
             rbDapper = new Controls.RadioButtons();
+            panel1 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // rbEntityFramework
             // 
+            rbEntityFramework.Anchor = AnchorStyles.None;
             rbEntityFramework.AutoSize = true;
+            rbEntityFramework.BackColor = Color.White;
             rbEntityFramework.CheckedColor = Color.FromArgb(250, 0, 164);
             rbEntityFramework.Font = new Font("Verdana", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            rbEntityFramework.Location = new Point(263, 178);
+            rbEntityFramework.ForeColor = Color.Black;
+            rbEntityFramework.Location = new Point(265, 172);
             rbEntityFramework.MinimumSize = new Size(0, 21);
             rbEntityFramework.Name = "rbEntityFramework";
             rbEntityFramework.Padding = new Padding(10, 0, 0, 0);
@@ -46,15 +51,18 @@
             rbEntityFramework.TabStop = true;
             rbEntityFramework.Text = "EntityFramework";
             rbEntityFramework.UnCheckedColor = Color.Gray;
-            rbEntityFramework.UseVisualStyleBackColor = true;
+            rbEntityFramework.UseVisualStyleBackColor = false;
             rbEntityFramework.CheckedChanged += rbEntityFramework_CheckedChanged;
             // 
             // rbDapper
             // 
+            rbDapper.Anchor = AnchorStyles.None;
             rbDapper.AutoSize = true;
+            rbDapper.BackColor = Color.White;
             rbDapper.CheckedColor = Color.FromArgb(250, 0, 164);
             rbDapper.Font = new Font("Verdana", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            rbDapper.Location = new Point(263, 222);
+            rbDapper.ForeColor = Color.Black;
+            rbDapper.Location = new Point(265, 242);
             rbDapper.MinimumSize = new Size(0, 21);
             rbDapper.Name = "rbDapper";
             rbDapper.Padding = new Padding(10, 0, 0, 0);
@@ -63,27 +71,37 @@
             rbDapper.TabStop = true;
             rbDapper.Text = "Dapper";
             rbDapper.UnCheckedColor = Color.Gray;
-            rbDapper.UseVisualStyleBackColor = true;
+            rbDapper.UseVisualStyleBackColor = false;
             rbDapper.CheckedChanged += rbDapper_CheckedChanged;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(rbEntityFramework);
+            panel1.Controls.Add(rbDapper);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(800, 450);
+            panel1.TabIndex = 2;
             // 
             // DbConnectionForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
-            Controls.Add(rbDapper);
-            Controls.Add(rbEntityFramework);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "DbConnectionForm";
             Text = "DbConnectionForm";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Controls.RadioButtons rbEntityFramework;
         private Controls.RadioButtons rbDapper;
+        private Panel panel1;
     }
 }

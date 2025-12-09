@@ -35,7 +35,11 @@
             btnLogin = new Controls.Buttons();
             labelLoginError = new Label();
             labelRegistration = new Label();
+            panelTop = new Panel();
+            btnClose = new FontAwesome.Sharp.IconButton();
+            btnRollUp = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
+            panelTop.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBoxLogo
@@ -117,11 +121,54 @@
             labelRegistration.TabIndex = 5;
             labelRegistration.Text = "Зарегистрироваться";
             // 
+            // panelTop
+            // 
+            panelTop.Controls.Add(btnClose);
+            panelTop.Controls.Add(btnRollUp);
+            panelTop.Dock = DockStyle.Top;
+            panelTop.Location = new Point(0, 0);
+            panelTop.Name = "panelTop";
+            panelTop.Size = new Size(736, 30);
+            panelTop.TabIndex = 9;
+            // 
+            // btnClose
+            // 
+            btnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.IconChar = FontAwesome.Sharp.IconChar.Close;
+            btnClose.IconColor = Color.Black;
+            btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnClose.IconSize = 20;
+            btnClose.Location = new Point(706, 3);
+            btnClose.Margin = new Padding(0);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(25, 24);
+            btnClose.TabIndex = 4;
+            btnClose.UseVisualStyleBackColor = true;
+            // 
+            // btnRollUp
+            // 
+            btnRollUp.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnRollUp.FlatAppearance.BorderSize = 0;
+            btnRollUp.FlatStyle = FlatStyle.Flat;
+            btnRollUp.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            btnRollUp.IconColor = Color.Black;
+            btnRollUp.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnRollUp.IconSize = 20;
+            btnRollUp.Location = new Point(676, 3);
+            btnRollUp.Margin = new Padding(0);
+            btnRollUp.Name = "btnRollUp";
+            btnRollUp.Size = new Size(25, 24);
+            btnRollUp.TabIndex = 3;
+            btnRollUp.UseVisualStyleBackColor = true;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(736, 471);
+            Controls.Add(panelTop);
             Controls.Add(labelRegistration);
             Controls.Add(labelLoginError);
             Controls.Add(btnLogin);
@@ -132,6 +179,7 @@
             Name = "LoginForm";
             Text = "LoginForm";
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
+            panelTop.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -144,5 +192,8 @@
         private Controls.Buttons btnLogin;
         private Label labelLoginError;
         private Label labelRegistration;
+        private Panel panelTop;
+        private FontAwesome.Sharp.IconButton btnClose;
+        private FontAwesome.Sharp.IconButton btnRollUp;
     }
 }

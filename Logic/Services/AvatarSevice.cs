@@ -50,16 +50,14 @@ namespace Logic.Services
             // Если у пользователя есть своя аватарка - загружаем её
             if (File.Exists(path))
             {
-                return Image.FromFile(path);
+                // Создаем копию изображения, чтобы не блокировать файл
+                using (var originalImage = Image.FromFile(path))
+                {
+                    return new Bitmap(originalImage);
+                }
             }
 
-            // Если нет своей аватарки - загружаем дефолтную
-            if (File.Exists(defaultAvatarPath))
-            {
-                return Image.FromFile(defaultAvatarPath);
-            }
-
-            // Если нет даже дефолтной - возвращаем null
+            // Если нет своей аватарки, возвращаем null
             return null;
         }
 
@@ -91,13 +89,6 @@ namespace Logic.Services
                 // Если не нашли JPEG кодек, сохраняем напрямую
                 image.Save(path, System.Drawing.Imaging.ImageFormat.Jpeg);
             }
-        }
-
-        public void DeleteAvatar(int userId)
-        {
-            string path = GetAvatarPath(userId);
-            if (File.Exists(path))
-                File.Delete(path);
         }
     }
 }

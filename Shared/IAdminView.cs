@@ -72,12 +72,7 @@ namespace Shared
         /// <summary>
         /// Событие запроса на изменение аватара
         /// </summary>
-        event EventHandler<string> ChangeAvatarRequested;
-
-        /// <summary>
-        /// Событие запроса на удаление аватара
-        /// </summary>
-        event EventHandler DeleteAvatarRequested;
+        event EventHandler ChangeAvatarRequested;
 
         /// <summary>
         /// Отображает список курсов
@@ -167,10 +162,5 @@ namespace Shared
         /// </summary>
         /// <returns>Путь к выбранному файлу или null если отменено</returns>
         string? RequestImageFile();
-
-        /// <summary>
-        /// Запрашивает подтверждение удаления аватара
-        /// </summary>
-        bool ConfirmDeleteAvatar();
     }
 }

@@ -177,7 +177,7 @@
             panelTitleBar.Dock = DockStyle.Top;
             panelTitleBar.Location = new Point(230, 0);
             panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.Size = new Size(696, 58);
+            panelTitleBar.Size = new Size(798, 58);
             panelTitleBar.TabIndex = 1;
             // 
             // btnFullWindow
@@ -189,7 +189,7 @@
             btnFullWindow.IconColor = Color.White;
             btnFullWindow.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnFullWindow.IconSize = 17;
-            btnFullWindow.Location = new Point(646, 0);
+            btnFullWindow.Location = new Point(748, 0);
             btnFullWindow.Margin = new Padding(0);
             btnFullWindow.Name = "btnFullWindow";
             btnFullWindow.Size = new Size(25, 24);
@@ -205,7 +205,7 @@
             btnWIndowRestore.IconColor = Color.White;
             btnWIndowRestore.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnWIndowRestore.IconSize = 20;
-            btnWIndowRestore.Location = new Point(646, 0);
+            btnWIndowRestore.Location = new Point(748, 0);
             btnWIndowRestore.Margin = new Padding(0);
             btnWIndowRestore.Name = "btnWIndowRestore";
             btnWIndowRestore.Size = new Size(25, 24);
@@ -222,7 +222,7 @@
             btnRollUp.IconColor = Color.White;
             btnRollUp.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnRollUp.IconSize = 20;
-            btnRollUp.Location = new Point(621, 0);
+            btnRollUp.Location = new Point(723, 0);
             btnRollUp.Margin = new Padding(0);
             btnRollUp.Name = "btnRollUp";
             btnRollUp.Size = new Size(25, 24);
@@ -238,7 +238,7 @@
             btnClose.IconColor = Color.White;
             btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnClose.IconSize = 20;
-            btnClose.Location = new Point(671, 0);
+            btnClose.Location = new Point(773, 0);
             btnClose.Margin = new Padding(0);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(25, 24);
@@ -271,17 +271,18 @@
             // 
             // panelChildForm
             // 
+            panelChildForm.BackColor = Color.White;
             panelChildForm.Dock = DockStyle.Fill;
             panelChildForm.Location = new Point(230, 58);
             panelChildForm.Name = "panelChildForm";
-            panelChildForm.Size = new Size(696, 453);
+            panelChildForm.Size = new Size(798, 453);
             panelChildForm.TabIndex = 2;
             // 
             // UserMainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(926, 511);
+            ClientSize = new Size(1028, 511);
             Controls.Add(panelChildForm);
             Controls.Add(panelTitleBar);
             Controls.Add(sideMenu);
@@ -290,7 +291,6 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "UserMainForm";
             Text = "OnlineSchool";
-            Load += Form1_Load;
             sideMenu.ResumeLayout(false);
             panelUser.ResumeLayout(false);
             panelUser.PerformLayout();

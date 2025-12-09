@@ -10,7 +10,6 @@ namespace Logic.Services
     public interface IAvatarService
     {
         void SaveAvatar(int userid, Image image);
-        void DeleteAvatar(int userid);
         Image LoadAvatar(int userid);
         string GetAvatarPath(int userid);
     }

@@ -42,12 +42,6 @@ namespace WinFormsApps.Controls
             }
 
             base.OnPaint(pe);
-
-            using (Pen pen = new Pen(Color.Gray, 2))
-            {
-                pe.Graphics.ResetClip();
-                pe.Graphics.DrawEllipse(pen, rect);
-            }
         }
     }
 }

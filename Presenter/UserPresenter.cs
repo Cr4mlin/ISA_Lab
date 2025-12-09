@@ -23,7 +23,6 @@ namespace Presenter
             _view.ViewAllCoursesRequested += OnViewAllCoursesRequested;
             _view.SearchCoursesRequested += OnSearchCoursesRequested;
             _view.ChangeAvatarRequested += OnChangeAvatarRequested;
-            _view.DeleteAvatarRequested += OnDeleteAvatarRequested;
             _view.LoadAvatarRequested += OnLoadAvatarRequested;
         }
 
@@ -121,7 +120,13 @@ namespace Presenter
                 var imagePath = _view.RequestImageFile();
                 if (!string.IsNullOrEmpty(imagePath))
                 {
-                    var image = Image.FromFile(imagePath);
+                    // Загружаем изображение и создаем копию, чтобы освободить файл
+                    Image image;
+                    using (var originalImage = Image.FromFile(imagePath))
+                    {
+                        image = new Bitmap(originalImage);
+                    }
+
                     _schoolService.SaveAvatar(_currentUserId, image);
                     _view.SetUserAvatar(image);
                     _view.ShowInfo("Аватар успешно изменен!");
@@ -133,23 +138,6 @@ namespace Presenter
             }
         }
 
-        private void OnDeleteAvatarRequested(object? sender, EventArgs e)
-        {
-            try
-            {
-                if (!_view.ConfirmDeleteAvatar())
-                    return;
-
-                _schoolService.DeleteAvatar(_currentUserId);
-                _view.SetUserAvatar(null);
-                _view.ShowInfo("Аватар успешно удален!");
-            }
-            catch (Exception ex)
-            {
-                _view.ShowError($"Ошибка при удалении аватара: {ex.Message}");
-            }
-        }
-
         private void OnLoadAvatarRequested(object? sender, EventArgs e)
         {
             try
@@ -158,6 +146,10 @@ namespace Presenter
                 if (avatar != null)
                 {
                     _view.SetUserAvatar(avatar);
+                }
+                else
+                {
+                    _view.SetUserAvatar(Properties.Resources.DefaultAvatar);
                 }
             }
             catch (Exception ex)
